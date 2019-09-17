@@ -4,12 +4,20 @@
   "description": "A small package to strip values out of a url to get its template",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "lint-fix": "tslint -c tslint.json -p tsconfig.json --fix",
+    "prestart": "npm run build",
+    "prebuild": "npm run lint",
+    "start": "node ./dist/index",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/briankopp/devalue-url.git"
   },
+  "files": [
+    "lib/**/*"
+  ],
   "author": "Brian Kopp",
   "license": "MIT",
   "bugs": {
