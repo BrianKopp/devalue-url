@@ -96,4 +96,10 @@ describe('UrlDevaluer class unit tests', () => {
         const result = urlDevaluer.devalueUrl(url);
         expect(result).to.eql('https://example.com/:value');
     });
+    it('should replace int ids when only the route is passed', () => {
+        const url = '/hello/123';
+        const urlDevaluer = new UrlDevaluer();
+        const result = urlDevaluer.devalueUrl(url);
+        expect(result).to.eql('/hello/:intId');
+    });
 });
