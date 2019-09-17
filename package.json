@@ -2,19 +2,27 @@
   "name": "devalue-url",
   "version": "0.1.0",
   "description": "A small package to strip values out of a url to get its template",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
+    "prebuild": "npm run lint",
+    "build": "tsc",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "lint-fix": "tslint -c tslint.json -p tsconfig.json --fix",
-    "prestart": "npm run build",
-    "prebuild": "npm run lint",
-    "start": "node ./dist/index",
-    "build": "tsc"
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run test && npm run lint"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/briankopp/devalue-url.git"
   },
+  "keywords": [
+    "url",
+    "template",
+    "value",
+    "express",
+    "route"
+  ],
   "files": [
     "lib/**/*"
   ],
