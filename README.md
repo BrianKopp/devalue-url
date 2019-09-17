@@ -1,4 +1,4 @@
-# Devalue URl
+# Devalue URL
 
 [![Actions Status](https://github.com/briankopp/devalue-url/workflows/Build/badge.svg)](https://github.com/briankopp/devalue-url/actions)
 
