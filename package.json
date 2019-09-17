@@ -1,0 +1,19 @@
+{
+  "name": "devalue-url",
+  "version": "0.1.0",
+  "description": "A small package to strip values out of a url to get its template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/briankopp/devalue-url.git"
+  },
+  "author": "Brian Kopp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/briankopp/devalue-url/issues"
+  },
+  "homepage": "https://github.com/briankopp/devalue-url#readme"
+}
