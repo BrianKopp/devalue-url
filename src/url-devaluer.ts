@@ -1,5 +1,12 @@
 import * as regexps from './reg-expressions';
 
+/**
+ * Class which strips values out of URLs.
+ * Usage:
+ * const urlDevaluer = new UrlDevaluer();
+ * urlDevaluer.devalueUrl('https://example.com/hello/123');
+ * // https://github.com/hello/:intId
+ */
 export class UrlDevaluer {
     private intReplacementName: string;
     private floatReplacementName: string;
@@ -7,6 +14,16 @@ export class UrlDevaluer {
     private extraTemplatePatterns: {
         [key: string]: RegExp
     };
+
+    /**
+     * Creates a new UrlDevaluer with options
+     * @param {Object} options - Options for the UrlDevaluer
+     * @param {string} options.intReplacementName - The value to replace integer values, default=intId
+     * @param {string} options.floatReplacementName - The value to replace float values, default=value
+     * @param {string} options.guidReplacementName - The value to replace guid values, default guidId
+     * @param {Object} options.extraTemplatePatterns - Dictionary of extra template patterns to run
+     * on the URL. Formatted like { key: StringOrRegExp }
+     */
     constructor(
         options: {
             intReplacementName?: string,
@@ -34,7 +51,12 @@ export class UrlDevaluer {
             }
         }
     }
-
+    
+    /**
+     * Strips values out of a URL
+     * @param {string} url url, with or without host.
+     * @returns {string} the URL with values stripped out of it
+     */
     public devalueUrl(url: string): string {
         const urlParts = url.split('?');
         if (urlParts.length === 0) {
