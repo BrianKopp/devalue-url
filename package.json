@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/briankopp/devalue-url/issues"
   },
-  "homepage": "https://github.com/briankopp/devalue-url#readme"
+  "homepage": "https://github.com/briankopp/devalue-url#readme",
+  "devDependencies": {
+    "@types/node": "^12.7.5",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.3"
+  }
 }
