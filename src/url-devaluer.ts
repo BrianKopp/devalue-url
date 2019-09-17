@@ -51,7 +51,7 @@ export class UrlDevaluer {
             }
         }
     }
-    
+
     /**
      * Strips values out of a URL
      * @param {string} url url, with or without host.
