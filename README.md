@@ -1,5 +1,7 @@
 # Devalue URl
 
+[![Actions Status](https://github.com/briankopp/devalue-url/workflows/npmpublish/badge.svg)](https://github.com/briankopp/devalue-url/actions)
+
 Friendly, typed package used to strip values out of URLs, leaving only the
 URL template, as it might appear in an express app, for example.
 
