@@ -1,6 +1,6 @@
 {
   "name": "devalue-url",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A small package to strip values out of a url to get its template",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
