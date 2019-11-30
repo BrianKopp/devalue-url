@@ -1,4 +1,4 @@
-const mocha = require('mocha');
+require('mocha');
 const chai = require('chai');
 const expect = chai.expect;
 const UrlDevaluer = require('../src/url-devaluer').UrlDevaluer;

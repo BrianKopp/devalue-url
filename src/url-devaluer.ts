@@ -1,5 +1,12 @@
 import * as regexps from './reg-expressions';
 
+export interface UrlDevaluerOptions {
+    intReplacementName?: string;
+    floatReplacementName?: string;
+    guidReplacementName?: string;
+    extraTemplatePatterns?: {[key: string]: string | RegExp };
+}
+
 /**
  * Class which strips values out of URLs.
  * Usage:
@@ -24,23 +31,19 @@ export class UrlDevaluer {
      * @param {Object} options.extraTemplatePatterns - Dictionary of extra template patterns to run
      * on the URL. Formatted like { key: StringOrRegExp }
      */
-    constructor(
-        options: {
-            intReplacementName?: string,
-            floatReplacementName?: string,
-            guidReplacementName?: string,
-            extraTemplatePatterns?: {
-                [key: string]: string | RegExp
-            }
-        } = {}
-    ) {
-        this.intReplacementName = options.intReplacementName || 'intId';
-        this.floatReplacementName = options.floatReplacementName || 'value';
-        this.guidReplacementName = options.guidReplacementName || 'guidId';
+    constructor({
+        intReplacementName = 'intId',
+        floatReplacementName = 'value',
+        guidReplacementName = 'guidId',
+        extraTemplatePatterns = {}
+    }: UrlDevaluerOptions) {
+        this.intReplacementName = intReplacementName || 'intId';
+        this.floatReplacementName = floatReplacementName || 'value';
+        this.guidReplacementName = guidReplacementName || 'guidId';
         this.extraTemplatePatterns = {};
-        if (options.extraTemplatePatterns) {
-            for (const name of Object.keys(options.extraTemplatePatterns)) {
-                const value = options.extraTemplatePatterns[name];
+        if (extraTemplatePatterns) {
+            for (const name of Object.keys(extraTemplatePatterns)) {
+                const value = extraTemplatePatterns[name];
                 if (typeof value === 'string') {
                     this.extraTemplatePatterns[name] = RegExp(value);
                 } else if (value instanceof RegExp) {
